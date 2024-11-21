@@ -31,7 +31,7 @@ class Histogram_test {
 		//obraz_1.print_histogram();
 
 		//zad2 blokowo
-		/*Obraz obraz2 = new Obraz(n, m);
+		Obraz obraz2 = new Obraz(n, m);
 		Watek2[] NewThr2 = new Watek2[num_threads];
 		Thread[] NewThr = new Thread[num_threads];
 		int el_na_watek = (int)Math.ceil(94.0/num_threads);
@@ -52,11 +52,11 @@ class Histogram_test {
 			}
 		}
 
-		obraz2.calculate_histogram();*/
+		obraz2.calculate_histogram();
 		//obraz2.print_histogram();
 
 		//zadanie 3
-		Obraz obraz3 = new Obraz(n, m);
+		/*Obraz obraz3 = new Obraz(n, m);
 		Watek3[] NewThr3 = new Watek3[num_threads];
 		Thread[] NewThr = new Thread[num_threads];
 		for(int i =0 ; i < num_threads;i++){
@@ -74,7 +74,7 @@ class Histogram_test {
 		}
 
 		obraz3.calculate_histogram();
-		obraz3.print_histogram();
+		obraz3.print_histogram();*/
 
 
 		//zadanie 4

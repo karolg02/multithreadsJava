@@ -21,15 +21,17 @@ public class Simple_executor_test {
 		System.out.println("Podaj krok: ");
 		Scanner scanner = new Scanner(System.in);
 		double dx = scanner.nextDouble();
+		System.out.println("Podaj ilosc zadan: ");
+		int ileZadan = scanner.nextInt();
 
 		//sekwencyjnie - 1 polecenie
 		System.out.println("Sekwencyjnie:");
 		Calka_sekw calka_sekw = new Calka_sekw(xp,xk,dx);
 		calka_sekw.getWynik();
 
-		double range = (xk -xp)/NTHREADS;
+		double range = (xk -xp)/ileZadan;
 		List<Future<Double>> results = new ArrayList<>();
-		for(int i = 0; i < NTHREADS; i++) {
+		for(int i = 0; i < ileZadan; i++) {
 			double start = xp + i*range;
 			double end = start + range;
 

@@ -19,7 +19,6 @@ public class Calka_callable implements Callable<Double>{
         /*System.out.println("Creating an instance of ocena3.Calka_callable");
         System.out.println("xp = " + xp + ", xk = " + xk + ", N = " + N);
         System.out.println("dx requested = " + dx + ", dx final = " + this.dx);*/
-
     }
 
     private double getFunction(double x) {
@@ -35,7 +34,7 @@ public class Calka_callable implements Callable<Double>{
             double x2 = x1+dx;
             calka += ((getFunction(x1) + getFunction(x2))/2.)*dx;
         }
-        System.out.println("Calka czastkowa: " + calka);
+        System.out.println("Numer watku: " + Thread.currentThread().getName() + " Calka czastkowa: " + calka);
         return calka;
     }
 }

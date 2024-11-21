@@ -1,3 +1,4 @@
+/*
 package ocena4_5;
 
 import org.w3c.dom.css.Counter;
@@ -31,3 +32,4 @@ public class Simple_executor_test {
 			  counter.get_c1(), counter.get_c2());
     }
 } 
+*/
