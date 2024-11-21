@@ -27,8 +27,8 @@ class Histogram_test {
 			}
 			catch (InterruptedException e) {}
 		}
-		obraz_1.calculate_histogram();
-		obraz_1.print_histogram();*/
+		obraz_1.calculate_histogram();*/
+		//obraz_1.print_histogram();
 
 		//zad2 blokowo
 		/*Obraz obraz2 = new Obraz(n, m);
@@ -39,7 +39,7 @@ class Histogram_test {
 			int start = el_na_watek*i;
 			int koniec = el_na_watek*(i+1);
 			if(koniec > 94) koniec = 94;
-			NewThr2[i] = new Watek2(start, koniec,obraz2);
+			NewThr2[i] = new Watek2(i,start, koniec,obraz2);
 			NewThr[i] = new Thread(NewThr2[i]);
 			NewThr[i].start();
 		}
@@ -52,11 +52,11 @@ class Histogram_test {
 			}
 		}
 
-		obraz2.calculate_histogram();
-		obraz2.print_histogram();*/
+		obraz2.calculate_histogram();*/
+		//obraz2.print_histogram();
 
 		//zadanie 3
-		/*Obraz obraz3 = new Obraz(n, m);
+		Obraz obraz3 = new Obraz(n, m);
 		Watek3[] NewThr3 = new Watek3[num_threads];
 		Thread[] NewThr = new Thread[num_threads];
 		for(int i =0 ; i < num_threads;i++){
@@ -74,14 +74,14 @@ class Histogram_test {
 		}
 
 		obraz3.calculate_histogram();
-		obraz3.print_histogram();*/
+		obraz3.print_histogram();
 
 
 		//zadanie 4
-		Obraz obraz4 = new Obraz(n, m);
+		/*Obraz obraz4 = new Obraz(n, m);
 		Watek4[] NewThr4 = new Watek4[num_threads];
 		Thread[] NewThr = new Thread[num_threads];
-		int el_na_watek = (int)Math.ceil(m/num_threads);
+		int el_na_watek = (int)Math.ceil((float)m/num_threads);
 		for(int i =0 ; i < num_threads;i++){
 			int start = el_na_watek*i;
 			int koniec = el_na_watek*(i+1);
@@ -100,7 +100,7 @@ class Histogram_test {
 		}
 
 		obraz4.calculate_histogram();
-		obraz4.print_histogram();
+		obraz4.print_histogram();*/
     }
 
 }

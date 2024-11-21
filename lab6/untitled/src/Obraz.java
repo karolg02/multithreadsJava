@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import  java.util.Random;
 
 
@@ -88,14 +89,23 @@ class Obraz {
 	}
 	//3
 	public void calculate_cykliczny(int start, int ilosc_watkow) {
+		int[] tabTemp = new int[l_znakow];
+
+		for(int i = 0;i<l_znakow;i++) tabTemp[i] = 0;
+
 		for(int i = start; i < size_n; i += ilosc_watkow){
 			for(int j = 0; j < size_m; j++){
-				int symbolIndex = (int) tab[i][j] - 33;
-				 synchronized (this){
-					 histogram_watku[symbolIndex]++;
-				 };
-				//histogram_watku[symbolIndex]++;
+				for( int k = 0; k < l_znakow; k++) {
+					if(tab[i][j]==tab_symb[k]) tabTemp[k]++;
+				}
 			}
+		}
+		save_sum(tabTemp);
+	}
+
+	private synchronized void save_sum(int[] tabTemp) {
+		for(int i = 0; i < l_znakow; i++) {
+			histogram_watku[i] += tabTemp[i];
 		}
 	}
 	//4
@@ -127,11 +137,25 @@ class Obraz {
 //           if(tab[i][j] == tab_symb[k]) histogram[k]++;
 //
 
+	public synchronized void print_histogram_custom(int id){
+		for(int i = 0; i < l_znakow; i++){
+			System.out.print("Thread id: "+id+ " ");
+			System.out.print(tab_symb[i]+ " " +histogram[i]);
+			for(int j = 0; j <histogram_watku[i]; j++){
+				System.out.print("=");
+			}
+			System.out.print("\n");
+		}
+	}
 
     public void print_histogram(){
 	
 	for(int i=0;i<l_znakow;i++) {
-	    System.out.print(tab_symb[i]+" "+histogram[i] + " " + histogram_watku[i]+"\n");
+	    System.out.print(tab_symb[i]+" "+histogram[i] + " " + histogram_watku[i]+" ");
+		for(int j = 0; j <histogram_watku[i]; j++){
+			System.out.print("=");
+		}
+		System.out.println("\n");
 	    //System.out.print((char)(i+33)+" "+histogram[i]+"\n");	    
 	}
 
